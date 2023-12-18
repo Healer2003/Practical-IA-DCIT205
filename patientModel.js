@@ -42,8 +42,8 @@ const emergencyContact = mongoose.Schema(
     }
 )
 
-const Relative = mongoose.model('Relative',mongoose.emergencyContact)
+const Relative = mongoose.model('Relative',emergencyContact)
 
-const Patient = mongoose.model('Patient',mongoose.patientSchema)
+const Patient = mongoose.model('Patient',patientSchema)
 module.exports = Patient
 module.exports = emergencyContact
