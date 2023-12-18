@@ -15,14 +15,35 @@ const patientSchema = mongoose.Schema(
     },
     Gender:{
         type:String
+    },
+    phoneNumber:{
+        type:Number,
+        required: true
     }
 
 
 },
-{
-    timestamps: true
-}
 )
+
+const emergencyContact = mongoose.Schema(
+    {
+        Name:{
+            type:String,
+            required: true
+        },
+        Contact:{
+            type:Number,
+            required:true
+        },
+        Relationship:{
+            type:String
+        }
+
+    }
+)
+
+const Relative = mongoose.model('Relative',mongoose.emergencyContact)
 
 const Patient = mongoose.model('Patient',mongoose.patientSchema)
 module.exports = Patient
+module.exports = emergencyContact
